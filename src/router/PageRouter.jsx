@@ -5,9 +5,10 @@ import { MainLayout } from "../Layouts/MainLayout";
 export const PageRouter = () => {
   return (
     <Routes>
-      <Route path={Paths.home} element={<MainLayout />}>
-        <Route index element={<h1>React Boilerplate 2.0</h1>} />
-        <Route path={Paths.pageNotFound} element={<h2>404 not found...</h2>} />
+      <Route path='/' element={<MainLayout />}>
+        <Route index />
+        <Route path='/category'/>
+        <Route path='/*' element={<h2>404 not found...</h2>} />
       </Route>
     </Routes>
   );

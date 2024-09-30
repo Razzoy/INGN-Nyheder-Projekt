@@ -1,0 +1,17 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+
+.navbarContainer{
+    background-color: $primary;
+    header{
+        h1{
+            @extend %righteous;
+            color: $secondary;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+    .navbarStyling{
+        
+    }
+}

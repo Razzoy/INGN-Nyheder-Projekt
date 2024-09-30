@@ -1,12 +1,12 @@
 export const allNews = `query NewsQuery {
     newsPages {
-        indhold
-        kategori
-        dato
-        overskrift
-        skribent
+        content
+        category
+        date
+        title
+        author
         slug
-        billede {
+        image {
             url
             fileName
         }

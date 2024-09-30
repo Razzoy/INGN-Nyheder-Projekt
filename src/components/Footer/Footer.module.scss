@@ -1,0 +1,19 @@
+@use '../../styles/mixins' as mixin;
+@use '../../styles/variables' as *;
+
+
+.footerContainer{
+    @include mixin.flexBox($justify: space-between);
+    padding-top: 3rem;
+    background-color: $primary;
+    ul{
+        list-style: none;
+        padding: 0;
+        li{
+            font-size: 2.5vw;
+            h3{
+                font-size: 3vw;
+            }
+        }
+    }
+}
