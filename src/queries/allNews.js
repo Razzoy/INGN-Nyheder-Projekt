@@ -1,7 +1,6 @@
 export const allNews = `query NewsQuery {
-    newsPages {
+    newsPages (first: 50) {
         content
-        category
         date
         title
         author

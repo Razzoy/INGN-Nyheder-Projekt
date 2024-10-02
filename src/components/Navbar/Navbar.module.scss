@@ -1,17 +1,36 @@
 @use '../../styles/placeholders' as *;
 @use '../../styles/variables' as *;
+@use '../../styles/mixins' as mixin;
 
-.navbarContainer{
+
+.navbarContainer {
     background-color: $primary;
-    header{
-        h1{
+    display: flex;
+    gap: 2vw;
+
+    header {
+        h1 {
             @extend %righteous;
             color: $secondary;
             font-weight: 400;
             margin: 0;
         }
     }
-    .navbarStyling{
-        
+
+    .navbarStyling {
+        @include mixin.flexBox();
+        ul {
+            @include mixin.flexBox(row, space-between, center, 4vw);
+            padding: 0;
+            list-style: none;
+            margin: 0;
+            li {
+                align-self: center;
+                a {
+                    font-size: 2.5vw;
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }
