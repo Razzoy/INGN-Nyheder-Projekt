@@ -4,6 +4,7 @@ import { request } from 'graphql-request'
 import { useQuery } from '@tanstack/react-query'
 import { NewsBlock } from '../components/NewsBlock/NewsBlock';
 import { useParams } from 'react-router-dom';
+import { NewsWrapper } from '../components/NewsWrapper/NewsWrapper';
 
 
 
@@ -23,14 +24,14 @@ export function SingleNews() {
     }
     
   return (
-    <div>
-        <NewsBlock
+    <NewsWrapper>
+      <NewsBlock
         title={data.newsPage.title}
         url={data.newsPage.image?.url}
         date={data.newsPage.date}
         author={data.newsPage.author}
         content={data.newsPage.content}
         ></NewsBlock>
-    </div>
+    </NewsWrapper>
   )
 }

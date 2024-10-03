@@ -9,7 +9,7 @@ export function NewsBlock({title, url, date, author, content, children}) {
         <Markdown>
             {content}
         </Markdown>
-        <p>Skrevet af: {author}. D: {date}</p>
+        <p className={style.edited}>Skrevet af: {author}. D: {date}</p>
         {children}
         <img src={url} />
     </article>

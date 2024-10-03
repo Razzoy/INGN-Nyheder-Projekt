@@ -6,29 +6,136 @@
 .navbarContainer {
     background-color: $primary;
     display: flex;
-    gap: 2vw;
+    padding: 0.5rem 1rem;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (min-width: 800px){
+        justify-content: flex-start;
+    }
 
     header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         h1 {
             @extend %righteous;
             color: $secondary;
             font-weight: 400;
             margin: 0;
+            font-size: 8vw;
+            padding: 0 5vw;
         }
+    }
+
+    .burgerMenu {
+        display: block;
+        cursor: pointer;
+        max-width: fit-content;
+
+        span {
+            display: block;
+            width: 30px;
+            height: 4px;
+            background-color: $secondary;
+            margin: 5px 0;
+            transition: 0.200ms;
+        }
+
+        @media (min-width: 800px) {
+            display: none;
+        }
+    }
+
+    .navClosed {
+        display: none;
     }
 
     .navbarStyling {
         @include mixin.flexBox();
+        display: none;
+        position: absolute;
+        background-color: $primary;
+        top: 12vw;
+        left: 0;
+        right: 0;
+        filter: drop-shadow(0 4vw 1vw #00000088);
+
         ul {
-            @include mixin.flexBox(row, space-between, center, 4vw);
-            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            text-align: center;
+            gap: 2vw;
+            padding: 1rem 0;
             list-style: none;
             margin: 0;
+
             li {
                 align-self: center;
+                background-color: #00000022;
+                padding: 0.5rem;
+
+                span {
+                    font-size: 3vw;
+                    padding: 0 1vw;
+                    display: none;
+                }
+
                 a {
-                    font-size: 2.5vw;
+                    font-size: 3vw;
                     text-decoration: none;
+                    color: $text;
+
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+
+                &:last-of-type {
+                    display: none;
+                }
+            }
+
+        }
+
+        &.navOpen {
+            display: flex;
+        }
+
+        @media (min-width: 800px) {
+            @include mixin.flexBox();
+            position: static;
+            filter: none;
+
+            ul {
+                @include mixin.flexBox(row, space-between, center, 0vw);
+                padding: 0;
+                list-style: none;
+                margin: 0;
+
+                li {
+                    align-self: center;
+                    background-color: transparent;
+                    padding: 0rem;
+                    
+
+                    span {
+                        font-size: 1.8vw;
+                        padding: 0 1vw;
+                        display: inline-block;
+                    }
+
+                    a {
+                        font-size: 1.8vw;
+                        text-decoration: none;
+                        color: $text;
+
+                        &:hover {
+                            color: $secondary;
+                        }
+                    }
                 }
             }
         }
