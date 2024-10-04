@@ -1,0 +1,76 @@
+@use '../../styles/placeholders' as *;
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as mixin;
+
+
+form {
+    margin: 3vw;
+    padding: 5rem;
+    background-color: $primary;
+    @include mixin.flexBox(column, flex-start, flex-start, 5vw);
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    input,
+    button {
+        height: 5vw;
+    }
+
+    fieldset {
+        border: none;
+        padding: 0;
+        margin: 0;
+        @include mixin.flexBox(column, flex-start, flex-start, 0);
+
+        label {
+            font-size: 1rem;
+            margin-bottom: 0.5vw;
+        }
+
+        input {
+            border: 2px solid $secondary;
+            outline: none;
+            width: 50vw;
+            font-size: 1.5rem;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        background-color: $primary;
+        border: 2px solid $secondary;
+        @extend %roboto;
+        font-size: 1rem;
+        padding: 0 8vw;
+    }
+
+    @media(min-width:800px) {
+        margin: 2vw 6vw;
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        input,
+        button {
+            height: 3vw;
+        }
+        fieldset > label, button{
+            font-size: 1rem;
+            
+        }
+
+        fieldset{
+            input{
+                width: 40vw;
+            }
+        }
+
+        button{
+            padding: 0 6vw;
+        }
+    }
+}

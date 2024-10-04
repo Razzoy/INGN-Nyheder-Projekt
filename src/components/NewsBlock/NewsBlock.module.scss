@@ -1,24 +1,23 @@
 @use '../../styles/placeholders' as *;
 @use '../../styles/variables' as *;
-@use '../../styles/mixins' as mixin;
 
 article {
+    display: flex;
+    flex-direction: column;
     background-color: $primary;
-    margin: 3vw;
-    padding: 3vw;
-
+    margin-bottom: 3vw;
     h2 {
         font-weight: 400;
-        font-size: 5vw;
+        font-size: 2rem;
         margin: 1vw 0;
     }
 
     span {
-        font-size: 3vw;
+        font-size: 1rem;
     }
 
     p {
-        font-size: 2.5vw;
+        font-size: 0.9rem;
         margin: 0.5vw 0;
     }
 
@@ -27,7 +26,7 @@ article {
     }
 
     a {
-        font-size: 2.5vw;
+        font-size: 0.9rem;
         color: $text;
         text-decoration: none;
     }
@@ -42,21 +41,45 @@ article {
         object-fit: cover;
     }
 
+    .contentContainer{
+        padding: 4vw 4vw 0 4vw;
+        @media(min-wdith: 800px){
+            padding: 2vw 2vw 0 2vw;
+
+        }
+    }
+
     @media (min-width:800px) {
 
-        margin: 0;
+        article{
+            margin: 0;
 
-        h2 {
-            font-size: 2.5vw;
+            h2 {
+                font-size: 3rem;
+            }
+    
+            span {
+                font-size: 1.5rem;
+            }
+    
+            p,
+            a {
+                font-size: 1.3rem;
+            }
         }
+        
+    }
+}
 
-        span {
-            font-size: 1.2vw;
-        }
-
-        p,
-        a {
-            font-size: 1vw;
+.singleNews{
+    margin: 3vw;
+    @media (min-width:800px){
+        margin: 2vw 6vw;
+        div{
+            padding: 3vw 10vw;
+            p{
+                margin: 2rem;
+            }
         }
     }
 }

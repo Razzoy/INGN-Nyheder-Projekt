@@ -1,8 +1,10 @@
 .wrapperStyling {
+    margin: 3vw;
+
     @media(min-width:800px) {
+        margin: 2vw 6vw;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: repeat(8, 1fr);
+        gap: 2vw;
         grid-template-areas:
             "news1 news1 news1 news1"
             "news1 news1 news1 news1"
@@ -15,6 +17,12 @@
     }
 }
 
+.singleWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
 
 .news1 {
     grid-area: news1;
@@ -38,10 +46,27 @@
 
 .news6 {
     grid-area: news6;
+
+    article {
+        display: flex;
+        flex-direction: row;
+        img{
+            width: 50%;
+        }
+    }
 }
 
 .news7 {
     grid-area: news7;
+    
+
+    article {
+        display: flex;
+        flex-direction: row-reverse;
+        img{
+            width: 50%;
+        }
+    }
 }
 
 .news8 {

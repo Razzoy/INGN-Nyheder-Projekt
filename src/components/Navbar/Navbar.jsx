@@ -55,7 +55,7 @@ export function Navbar() {
         </ul>
       </nav>
       <div className={style.iconBurgerContainer}>
-        <span className={style.iconLogin} onClick={''}><FaUser /></span>
+        {<NavLink className={style.iconLogin} to={`/login`}><FaUser /></NavLink>}
         <div className={`${style.burgerMenu} ${burgerOpen ? style.open : ''}`} onClick={BurgerClick}>
           <span></span>
           <span></span>
