@@ -3,9 +3,9 @@
 
 
 .footerContainer{
-    @include mixin.flexBox($justify: space-between);
-    padding-top: 3rem;
+    @include mixin.flexBox(row, center, flex-start, 3vw); //Henter en skabelon til flexing
     background-color: $primary;
+    padding: 3vw;
     ul{
         list-style: none;
         padding: 0;
@@ -13,7 +13,32 @@
         li{
             font-size: 2.5vw;
             h3{
-                font-size: 3vw;
+                font-size: 2.5vw;
+                margin:0 0 3.5vw;
+                font-weight: 400;
+            }
+        }
+        &:first-of-type{
+            li:nth-of-type(2){
+                margin-bottom: 2vw;
+            }
+        }
+    }
+    @media(min-width:800px){
+        gap: 10vw;
+        ul{
+            li{
+                font-size: 1vw;
+                h3{
+                font-size: 1vw;
+                margin-bottom: 1.5vw;
+
+                }
+            }
+            &:first-of-type{
+                li:nth-of-type(2){
+                    margin-bottom: 1vw;
+                }
             }
         }
     }

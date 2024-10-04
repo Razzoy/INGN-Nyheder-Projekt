@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { request } from 'graphql-request';
 import { newsByCategory } from '../queries/newsByCategory';
-import React from 'react'
 import { NewsBlock } from '../components/NewsBlock/NewsBlock';
 import { Link, useParams } from 'react-router-dom';
 

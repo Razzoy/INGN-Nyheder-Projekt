@@ -3,7 +3,6 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-rows: repeat(8, 1fr);
-        gap: 0px 0px;
         grid-template-areas:
             "news1 news1 news1 news1"
             "news1 news1 news1 news1"
@@ -11,10 +10,11 @@
             "news2 news2 news5 news5"
             "news4 news4 news5 news5"
             "news6 news6 news6 news6"
-            "News7 News7 News7 News7"
-            "News8 News8 news9 news9";
+            "news7 news7 news7 news7"
+            "news8 news8 news9 news9";
     }
 }
+
 
 .news1 {
     grid-area: news1;
@@ -50,18 +50,4 @@
 
 .news9 {
     grid-area: news9;
-}
-
-.news1,
-.news2,
-.news3,
-.news4,
-.news5,
-.news6,
-.news7,
-.news8,
-.news9 {
-    border: 1px solid red; // Gør dem synlige
-    background-color: rgba(255, 0, 0, 0.1); // Giv dem en farve, så vi kan se dem
-    padding: 10px; // Tilføj noget indhold for at fylde dem ud
 }

@@ -11,9 +11,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @media (min-width: 800px){
-        justify-content: flex-start;
-    }
+
 
     header {
         display: flex;
@@ -27,6 +25,23 @@
             margin: 0;
             font-size: 8vw;
             padding: 0 5vw;
+            @media (min-width: 800px) {
+                padding: 0 3vw;
+            }
+        }
+    }
+
+    .iconBurgerContainer {
+        display: flex;
+        gap: 2vw;
+        justify-content: center;
+        align-items: center;
+
+        .iconLogin {
+            margin-top: 0.5rem;
+            font-size: 5vw;
+            color: $secondary;
+            cursor: pointer;
         }
     }
 
@@ -41,11 +56,61 @@
             height: 4px;
             background-color: $secondary;
             margin: 5px 0;
-            transition: 0.200ms;
+            transition: all 0.2s ease;
+        }
+
+        &.open span:nth-of-type(1) {
+            animation: close-top 0.4s forwards;
+        }
+
+        &.open span:nth-of-type(2) {
+            animation: close-middle 0.4s forwards;
+        }
+
+        &.open span:nth-of-type(3) {
+            animation: close-bottom 0.4s forwards;
         }
 
         @media (min-width: 800px) {
             display: none;
+        }
+    }
+
+    @keyframes close-top {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+
+        50% {
+            transform: translateY(10px) rotate(0);
+        }
+
+        100% {
+            transform: translateY(10px) rotate(45deg);
+        }
+    }
+
+    @keyframes close-middle {
+        0% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes close-bottom {
+        0% {
+            transform: translateY(0) rotate(0);
+        }
+
+        50% {
+            transform: translateY(-10px) rotate(0);
+        }
+
+        100% {
+            transform: translateY(-8px) rotate(-45deg);
         }
     }
 
@@ -119,7 +184,7 @@
                     align-self: center;
                     background-color: transparent;
                     padding: 0rem;
-                    
+
 
                     span {
                         font-size: 1.8vw;

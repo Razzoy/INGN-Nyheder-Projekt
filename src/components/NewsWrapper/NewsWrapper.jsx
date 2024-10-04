@@ -1,4 +1,3 @@
-import React from 'react'
 import style from './NewsWrapper.module.scss'
 
 export function NewsWrapper({children}) {

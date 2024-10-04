@@ -1,7 +1,6 @@
 import { request } from 'graphql-request'
 import { useQuery } from '@tanstack/react-query'
 import { allNews } from '../queries/allNews';
-import Markdown from 'markdown-to-jsx';
 import { NewsBlock } from '../components/NewsBlock/NewsBlock';
 import { Link } from 'react-router-dom';
 import { NewsWrapper } from '../components/NewsWrapper/NewsWrapper';
@@ -29,9 +28,6 @@ export function LandingPage() {
     return (
         <NewsWrapper>
             {data.newsPages.map((item, index) => {
-                const gridClass = getGridAreaClass(index);
-                console.log(`Rendering ${item.title} with class: ${gridClass}`);
-
                 return (
                     <div key={item.slug} className={getGridAreaClass(index)}>
                         <NewsBlock

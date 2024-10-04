@@ -4,16 +4,17 @@ import { NavLink } from "react-router-dom";
 import { request } from "graphql-request";
 import { categories } from '../../queries/categories'
 import { useState } from "react";
+import { FaUser } from "react-icons/fa";
 
 export function Navbar() {
 
-  const [burgerOpen, setBurgerOpen] = useState(false);
+  const [burgerOpen, setBurgerOpen] = useState(false); //opretter en state på om burger menuen er lukket eller åbnet.
 
-  const BurgerClick = () => {
-    setBurgerOpen(!burgerOpen);
+  const BurgerClick = () => { //funktion der skifter burgermenuen's usestate imellem true og false.
+    setBurgerOpen(!burgerOpen); //f.eks. hvis false, så ! = modsat
   }
 
-  const { data, isLoading, error } = useQuery(
+  const { data, isLoading, error } = useQuery( //fetcher efter selvlavet API fra Hygraph
     {
       queryKey: ['categories'],
       queryFn: async () => request(import.meta.env.VITE_PUBLIC_ENDPOINT, categories)
@@ -33,19 +34,14 @@ export function Navbar() {
       <header>
         <h1>INGN</h1>
       </header>
-      <div className={style.burgerMenu} onClick={BurgerClick}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
       <nav className={`${style.navbarStyling} ${burgerOpen ? style.navOpen : style.navClosed}`}>
         <ul>
 
           <li>
-          <span>|</span>
+            <span>|</span>
             {<NavLink to={`/`}>Alle</NavLink>}
           </li>
-          {data?.categories?.map((item) => (
+          {data?.categories?.map((item) => ( //Mapper dataen ud fra API'en
             <li key={item.category}>
               <span>|</span>
               <NavLink to={`/categories/${item.category}`}>
@@ -54,10 +50,18 @@ export function Navbar() {
             </li>
           ))}
           <li>
-          <span>|</span>
+            <span>|</span>
           </li>
         </ul>
       </nav>
+      <div className={style.iconBurgerContainer}>
+        <span className={style.iconLogin} onClick={''}><FaUser /></span>
+        <div className={`${style.burgerMenu} ${burgerOpen ? style.open : ''}`} onClick={BurgerClick}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
     </div>
   );
 };
